@@ -47,8 +47,8 @@ bootJar { enabled = false}
 jar {
 	enabled = false
 }
-project(':hanghe-api') {
+project(':hhplus-api') {
 	dependencies {
-		implementation project(':hanghe_domain')
+		implementation project(':hhplus_domain')
 	}
 }
