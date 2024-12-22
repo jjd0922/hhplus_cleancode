@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds">
-    <springProfile name="window">
-        <property name="HANGHE_API_LOG" value="/tmp/logs/hanghe"/>
-    </springProfile>
-    <springProfile name="dev">
+    <springProfile>
         <property name="HANGHE_API_LOG" value="/tmp/logs/hanghe" />
     </springProfile>
-    <springProfile name="prod">
-        <property name="HANGHE_API_LOG" value="/tmp/logs/hanghe" />
-    </springProfile>
-
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <withJansi>true</withJansi>
 
@@ -35,10 +28,6 @@
             <maxHistory>60</maxHistory>
         </rollingPolicy>
     </appender>
-
-<!--    <logger name="net.lunalabs.central" level="INFO">-->
-<!--        <appender-ref ref="DAILY_ROLLING_FILE_APPENDER"/>-->
-<!--    </logger>-->
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
