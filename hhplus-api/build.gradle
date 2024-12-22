@@ -16,11 +16,13 @@ repositories {
 dependencies {
 
 	runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	customProvidedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:3.2.1'
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation files('libs/httpcore-4.4.1.jar')
 	implementation files('libs/httpclient-4.4.1.jar')
+	implementation 'mysql:mysql-connector-java:8.0.33'
 
 	api 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	api 'org.springframework.boot:spring-boot-starter-web'
