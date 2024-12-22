@@ -1,0 +1,54 @@
+plugins {
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'java'
+}
+
+allprojects{
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects{
+
+	apply plugin: 'java-library'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	group = 'com.hanghe'
+	version = '1.0'
+	sourceCompatibility = '17'
+
+	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+	tasks.withType(JavaCompile){
+		options.encoding = 'UTF-8'
+	}
+
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+	dependencies {
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+
+}
+
+bootJar { enabled = false}
+jar {
+	enabled = false
+}
+project(':hanghe-api') {
+	dependencies {
+		implementation project(':hanghe_domain')
+	}
+}

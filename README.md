@@ -1,1 +1,0 @@
-# hhplus_cleancode

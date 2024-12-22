@@ -1,0 +1,3 @@
+rootProject.name = 'hanghe'
+include 'hanghe-api'
+include 'hanghe_domain'
